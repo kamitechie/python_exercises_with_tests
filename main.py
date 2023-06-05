@@ -22,18 +22,18 @@ def exercise_python_version():
 
 # 3
 
-def exercise_date_time(now):
-    now_formatted = now.strftime("%Y-%m-%d %H:%M:%S")
-    return print(now_formatted)
+def exercise_date_time(date):
+    date_formatted = date.strftime("%Y-%m-%d %H:%M:%S")
+    return print(date_formatted)
 
 
 # 4
 
 
-def circle_area(r):
+def exercise_circle_area(r):
     return math.pi * r ** 2
 
-
+print(exercise_circle_area(6))
 # 5
 
 def exercise_reverse_name(name, last_name):
