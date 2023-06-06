@@ -94,7 +94,7 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.exercise_file_ext(test_param)
 
-    # 8 exercise
+    # 8 exercise tests
 
     def test_exercise_colors(self):
         test_param = ['red', 'blue', 'yellow', 'green']
@@ -112,6 +112,26 @@ class TestMain(unittest.TestCase):
         test_param = None
         with self.assertRaises(TypeError):
             main.exercise_colors(test_param)
+
+    # 9 exercise tests
+
+    def test_exercise_exam_date(self):
+        test_param = (2021, 8, 23)
+        self.assertEqual(main.exercise_exam_date(test_param), 'The examination will start from : 2021 / 8 / 23')
+
+    def test_exercise_exam_date_str(self):
+        test_param = 'July 23'
+        with self.assertRaises(TypeError):
+            main.exercise_exam_date(test_param)
+
+    def test_exercise_exam_date_not_valid(self):
+        test_param = (2021, 20, 23)
+        self.assertEqual(main.exercise_exam_date(test_param), 'This date does not exist')
+
+    def test_exercise_exam_date_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.exercise_exam_date(test_param)
 
 
 if __name__ == '__main__':

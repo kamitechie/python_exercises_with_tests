@@ -87,8 +87,12 @@ def exercise_colors(color_list):
 # 9
 
 def exercise_exam_date(exam_st_date):
-    return print("The examination will start from : %i / %i / %i" % exam_st_date)
-
+    if type(exam_st_date) != tuple:
+        raise TypeError('Date format should be: (YYYY, MM, DD)')
+    elif len(exam_st_date) > 3 or exam_st_date[1] > 12 or exam_st_date[2] > 31:
+        return 'This date does not exist'
+    else:
+        return 'The examination will start from : %i / %i / %i' % exam_st_date
 
 # 10
 
