@@ -1,6 +1,5 @@
 import unittest
 import main
-import datetime
 
 
 class TestMain(unittest.TestCase):
@@ -35,13 +34,13 @@ class TestMain(unittest.TestCase):
     def test_exercise_reverse_fullname_lowercase(self):
         test_param_name = 'WILL'
         test_param_lastname = 'SHO'
-        result = main.exercise_reverse_name(test_param_name,test_param_lastname)
+        result = main.exercise_reverse_name(test_param_name, test_param_lastname)
         self.assertEqual(result, 'OHS LLIW')
 
     def test_exercise_reverse_fullname_uppercase(self):
         test_param_name = 'fo'
         test_param_lastname = 'ally'
-        result = main.exercise_reverse_name(test_param_name,test_param_lastname)
+        result = main.exercise_reverse_name(test_param_name, test_param_lastname)
         self.assertEqual(result, 'ylla of')
 
     def test_exercise_reverse_fullname_not_string(self):
@@ -69,11 +68,13 @@ class TestMain(unittest.TestCase):
     def test_exercise_list_to_tuple_empty(self):
         test_param = []
         self.assertEqual(main.exercise_list_to_tuple(test_param), ())
+
     def test_exercise_list_to_tuple_none(self):
         test_param = None
         with self.assertRaises(TypeError):
             main.exercise_list_to_tuple(test_param)
 
+    # 7 exercise tests
 
 
 

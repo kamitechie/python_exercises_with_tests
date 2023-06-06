@@ -62,6 +62,11 @@ def exercise_list_to_tuple(numbers_list):
 # 7
 
 def exercise_file_ext(file_name):
+    if type(file_name) != str:
+        raise TypeError('Please enter valid file name')
+    if '.' not in file_name:
+        return 'Incorrect file name'
+
     file = file_name.split(".")
     return file[-1]
 
