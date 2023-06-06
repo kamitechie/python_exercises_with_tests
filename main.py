@@ -1,8 +1,6 @@
 import sys
-import datetime as dt
 import math
 import calendar
-import datetime
 
 
 # 1
@@ -94,9 +92,12 @@ def exercise_exam_date(exam_st_date):
     else:
         return 'The examination will start from : %i / %i / %i' % exam_st_date
 
+
 # 10
 
 def exercise_triple_sum(num):
+    if type(num) != int:
+        raise TypeError('Please enter a number')
     double_num = num + num
     triple_num = num + num + num
     return num + double_num + triple_num

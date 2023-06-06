@@ -133,6 +133,30 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.exercise_exam_date(test_param)
 
+    # 10 exercise tests
+
+    def test_triple_sum(self):
+        test_param = 1
+        self.assertEqual(main.exercise_triple_sum(test_param), 6)
+
+    def test_triple_sum_zero(self):
+        test_param = 0
+        self.assertEqual(main.exercise_triple_sum(test_param), 0)
+
+    def test_triple_sum_negative(self):
+        test_param = -1
+        self.assertEqual(main.exercise_triple_sum(test_param), -6)
+
+    def test_triple_sum_str(self):
+        test_param = 'one'
+        with self.assertRaises(TypeError):
+            main.exercise_triple_sum(test_param)
+
+    def test_triple_sum_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.exercise_triple_sum(test_param)
+
 
 if __name__ == '__main__':
     unittest.main()
