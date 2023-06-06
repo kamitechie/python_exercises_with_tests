@@ -39,12 +39,18 @@ def exercise_circle_area(r):
     return math.pi * r ** 2
 
 
-
 # 5
 
 def exercise_reverse_name(name, last_name):
+    if type(name) != str:
+        raise TypeError('Name and Last name should be letters')
+    if type(last_name) != str:
+        raise TypeError('Name and Last name should be letters')
+
     full_name = name + " " + last_name
     return full_name[::-1]
+
+print(exercise_reverse_name('anna', 'ali'))
 
 
 # 6
