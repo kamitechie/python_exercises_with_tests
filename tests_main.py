@@ -1,5 +1,6 @@
 import unittest
 import main
+import calendar
 
 
 class TestMain(unittest.TestCase):
@@ -135,28 +136,61 @@ class TestMain(unittest.TestCase):
 
     # 10 exercise tests
 
-    def test_triple_sum(self):
+    def test_exercise_triple_sum(self):
         test_param = 1
         self.assertEqual(main.exercise_triple_sum(test_param), 6)
 
-    def test_triple_sum_zero(self):
+    def test_exercise_triple_sum_zero(self):
         test_param = 0
         self.assertEqual(main.exercise_triple_sum(test_param), 0)
 
-    def test_triple_sum_negative(self):
+    def test_exercise_triple_sum_negative(self):
         test_param = -1
         self.assertEqual(main.exercise_triple_sum(test_param), -6)
 
-    def test_triple_sum_str(self):
+    def test_exercise_triple_sum_str(self):
         test_param = 'one'
         with self.assertRaises(TypeError):
             main.exercise_triple_sum(test_param)
 
-    def test_triple_sum_none(self):
+    def test_exercise_triple_sum_none(self):
         test_param = None
         with self.assertRaises(TypeError):
             main.exercise_triple_sum(test_param)
 
+    # 14 exercise tests
+
+    #def test_exercise_diff_days(self):
+     #   test_param_date1 = (2014, 3, 21)
+      #  test_param_date2 = (2014, 3, 14)
+       # self.assertEqual(main.exercise_diff_days(test_param_date1, test_param_date2), 7)
+
+    #def test_exercise_diff_days_str(self):
+     #   test_param_date1 = '2014, 9, 7'
+      #  test_param_date2 = (2014, 3, 14)
+       # with self.assertRaises(TypeError):
+        #    main.exercise_diff_days(test_param_date1, test_param_date2)
+
+    # 15 exercise tests
+
+    def test_exercise_sphere_volume(self):
+        test_param = 1
+        self.assertEqual(main.exercise_sphere_volume(test_param), 'Sphere volume: 4.1887902047863905')
+
+    def test_exercise_sphere_volume_negative(self):
+        test_param = -1
+        with self.assertRaises(ValueError):
+            main.exercise_sphere_volume(test_param)
+
+    def test_exercise_sphere_volume_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.exercise_sphere_volume(test_param)
+
+    def test_exercise_sphere_volume_not_num(self):
+        test_param = 'one'
+        with self.assertRaises(TypeError):
+            main.exercise_sphere_volume(test_param)
 
 if __name__ == '__main__':
     unittest.main()

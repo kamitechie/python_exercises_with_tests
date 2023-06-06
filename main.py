@@ -1,6 +1,7 @@
 import sys
 import math
 import calendar
+import datetime as dt
 
 
 # 1
@@ -105,8 +106,8 @@ def exercise_triple_sum(num):
 
 # 11
 
-def exercise_abs_doc(func):
-    return print(func.__doc__)
+def exercise_abs_doc():
+    return print(abs.__doc__)
 
 
 # 12
@@ -130,15 +131,22 @@ def exercise_multiline_string():
 # 14
 
 def exercise_diff_days(date_1, date_2):
+    if type(date_1) != dt.date or type(date_2) != dt.date:
+        raise TypeError('Incorrect date, date format: (YYYY, MM, DD)')
     diff = date_2 - date_1
-    return print(diff.days)
+    return diff.days
 
 
 # 15
 
 def exercise_sphere_volume(r):
-    volume = (4/3)*math.pi * r ** 3
-    return print(f"Sphere volume: {volume}")
+    if type(r) != int:
+        raise TypeError('Please enter a number')
+    elif r <= 0:
+        raise ValueError('Input should be positive number')
+    else:
+        volume = (4/3)*math.pi * r ** 3
+    return f"Sphere volume: {volume}"
 
 
 # 16
