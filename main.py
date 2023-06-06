@@ -39,7 +39,6 @@ def exercise_circle_area(r):
     return math.pi * r ** 2
 
 
-# print(exercise_circle_area())
 
 # 5
 
