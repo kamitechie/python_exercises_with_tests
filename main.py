@@ -151,7 +151,9 @@ def exercise_sphere_volume(r):
 
 # 16
 
-def number_diff(n):
+def exercise_number_diff(n):
+    if type(n) != int:
+        raise TypeError('Please enter a number')
     number = abs(n - 17)
     if n > 17:
         return number * 2

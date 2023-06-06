@@ -192,5 +192,29 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.exercise_sphere_volume(test_param)
 
+    # 15 exercise tests
+
+    def test_exercise_number_diff(self):
+        test_param = 2
+        self.assertEqual(main.exercise_number_diff(test_param), 15)
+
+    def test_exercise_number_diff_negative(self):
+        test_param = -2
+        self.assertEqual(main.exercise_number_diff(test_param), 19)
+
+    def test_exercise_number_diff_zero(self):
+        test_param = 0
+        self.assertEqual(main.exercise_number_diff(test_param), 17)
+
+    def test_exercise_number_diff_str(self):
+        test_param = 'two'
+        with self.assertRaises(TypeError):
+            main.exercise_number_diff(test_param)
+
+    def test_exercise_number_diff_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.exercise_number_diff(test_param)
+
 if __name__ == '__main__':
     unittest.main()
