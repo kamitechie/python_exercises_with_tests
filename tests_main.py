@@ -76,7 +76,23 @@ class TestMain(unittest.TestCase):
 
     # 7 exercise tests
 
+    def test_exercise_file_ext(self):
+        test_param = 'main.py'
+        self.assertEqual(main.exercise_file_ext(test_param), 'py')
 
+    def test_exercise_file_ext_no_ext(self):
+        test_param = 'projectpy'
+        self.assertEqual(main.exercise_file_ext(test_param), 'Incorrect file name')
+
+    def test_exercise_file_ext_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.exercise_file_ext(test_param)
+
+    def test_exercise_file_ext_num(self):
+        test_param = 345
+        with self.assertRaises(TypeError):
+            main.exercise_file_ext(test_param)
 
 
 if __name__ == '__main__':
