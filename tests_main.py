@@ -94,6 +94,25 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.exercise_file_ext(test_param)
 
+    # 8 exercise
+
+    def test_exercise_colors(self):
+        test_param = ['red', 'blue', 'yellow', 'green']
+        self.assertEqual(main.exercise_colors(test_param), 'First color: red\nLast color: green')
+
+    def test_exercise_colors_numbers_in_list(self):
+        test_param = ['yellow', 'green', 3, 4]
+        self.assertEqual(main.exercise_colors(test_param), 'The list is not valid')
+
+    def test_exercise_colors_empty(self):
+        test_param = []
+        self.assertEqual(main.exercise_colors(test_param), 'There are no colors in a list')
+
+    def test_exercise_colors_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.exercise_colors(test_param)
+
 
 if __name__ == '__main__':
     unittest.main()

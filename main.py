@@ -74,7 +74,14 @@ def exercise_file_ext(file_name):
 # 8
 
 def exercise_colors(color_list):
-    return print(f"First color: {color_list[0]}\nLast color: {color_list[-1]}")
+    if type(color_list) != list:
+        raise TypeError('Please enter a list of colors')
+    elif not color_list:
+        return 'There are no colors in a list'
+    elif type(color_list[0]) != str or type(color_list[-1]) != str:
+        return 'The list is not valid'
+    else:
+        return f"First color: {color_list[0]}\nLast color: {color_list[-1]}"
 
 
 # 9
