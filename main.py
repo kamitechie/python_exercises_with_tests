@@ -31,9 +31,16 @@ def exercise_date_time(date):
 
 
 def exercise_circle_area(r):
+    if type(r) != int:
+        raise TypeError('Please enter a number')
+
+    if r <= 0:
+        raise ValueError('The number should be positive')
     return math.pi * r ** 2
 
-print(exercise_circle_area(6))
+
+# print(exercise_circle_area())
+
 # 5
 
 def exercise_reverse_name(name, last_name):
