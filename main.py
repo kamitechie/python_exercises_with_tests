@@ -50,12 +50,12 @@ def exercise_reverse_name(name, last_name):
     full_name = name + " " + last_name
     return full_name[::-1]
 
-print(exercise_reverse_name('anna', 'ali'))
-
 
 # 6
 
-def exercise_num_to_tuple(numbers_list):
+def exercise_list_to_tuple(numbers_list):
+    if type(numbers_list) != list:
+        raise TypeError('Please enter a list')
     return tuple(numbers_list)
 
 
