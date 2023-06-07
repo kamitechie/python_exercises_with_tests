@@ -246,6 +246,22 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.number_narcissist(test_param)
 
+    # exercise to cap case tests
+
+    def test_to_cap_case(self):
+        test_param = "How can mirrors be real if our eyes aren't real"
+        self.assertEqual(main.to_cap_case(test_param), "How Can Mirrors Be Real If Our Eyes Aren't Real")
+
+    def test_to_cap_case_numbers(self):
+        test_param = 234
+        with self.assertRaises(TypeError):
+            main.to_cap_case(test_param)
+
+    def test_to_cap_case_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.to_cap_case(test_param)
+
 
 if __name__ == '__main__':
     unittest.main()

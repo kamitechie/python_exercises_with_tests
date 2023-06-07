@@ -179,15 +179,17 @@ def number_narcissist(value):
         else:
             return False
 
+
 # Capitalize string
 
 def to_cap_case(string):
+    if type(string) != str:
+        raise TypeError('Input should be string')
+
     list_string = string.split()
     cap_list = [word.capitalize() for word in list_string]
     cap_string = " ".join(cap_list)
     return cap_string
-
-# print(to_cap_case("How can mirrors be real if our eyes aren't real"))
 
 
 # Counting vowels in string
