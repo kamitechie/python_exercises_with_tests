@@ -1,6 +1,7 @@
 import unittest
 import main
 import calendar
+from datetime import date
 
 
 class TestMain(unittest.TestCase):
@@ -160,16 +161,22 @@ class TestMain(unittest.TestCase):
 
     # 14 exercise tests
 
-    #def test_exercise_diff_days(self):
-     #   test_param_date1 = (2014, 3, 21)
-      #  test_param_date2 = (2014, 3, 14)
-       # self.assertEqual(main.exercise_diff_days(test_param_date1, test_param_date2), 7)
+    def test_exercise_diff_days(self):
+        test_param_date1 = date(2014, 3, 21)
+        test_param_date2 = date(2014, 3, 14)
+        self.assertEqual(main.exercise_diff_days(test_param_date1, test_param_date2), 7)
 
-    #def test_exercise_diff_days_str(self):
-     #   test_param_date1 = '2014, 9, 7'
-      #  test_param_date2 = (2014, 3, 14)
-       # with self.assertRaises(TypeError):
-        #    main.exercise_diff_days(test_param_date1, test_param_date2)
+    def test_exercise_diff_days_str(self):
+        test_param_date1 = '2014, 9, 7'
+        test_param_date2 = date(2014, 3, 14)
+        with self.assertRaises(TypeError):
+            main.exercise_diff_days(test_param_date1, test_param_date2)
+
+    def test_exercise_diff_days_none(self):
+        test_param_date1 = None
+        test_param_date2 = None
+        with self.assertRaises(TypeError):
+            main.exercise_diff_days(test_param_date1, test_param_date2)
 
     # 15 exercise tests
 

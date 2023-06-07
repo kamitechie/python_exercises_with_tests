@@ -1,7 +1,7 @@
 import sys
 import math
 import calendar
-import datetime as dt
+from datetime import date
 
 
 # 1
@@ -131,9 +131,10 @@ def exercise_multiline_string():
 # 14
 
 def exercise_diff_days(date_1, date_2):
-    if type(date_1) != dt.date or type(date_2) != dt.date:
+    if type(date_1) != date or type(date_2) != date:
         raise TypeError('Incorrect date, date format: (YYYY, MM, DD)')
-    diff = date_2 - date_1
+
+    diff = abs(date_2 - date_1)
     return diff.days
 
 
