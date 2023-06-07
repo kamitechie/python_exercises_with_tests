@@ -113,8 +113,11 @@ def exercise_abs_doc():
 # 12
 
 def exercise_calendar(year, month):
+    if type(year) != int or type(month) != int:
+        raise TypeError('Input should be year and month integers')
+
     cal = calendar.month(year, month)
-    return print(cal)
+    return cal
 
 
 # 13

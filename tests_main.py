@@ -159,6 +159,27 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.exercise_triple_sum(test_param)
 
+
+    # 12 exercise tests
+
+    def test_exercise_calendar(self):
+        test_param_year = 1994
+        test_param_month = 5
+        self.assertEqual(main.exercise_calendar(test_param_year, test_param_month), calendar.month(1994, 5))
+
+    def test_exercise_calendar_str(self):
+        test_param_year = 1999
+        test_param_month = 'June'
+        with self.assertRaises(TypeError):
+            main.exercise_calendar(test_param_year, test_param_month)
+
+    def test_exercise_calendar_none(self):
+        test_param_year = None
+        test_param_month = None
+        with self.assertRaises(TypeError):
+            main.exercise_calendar(test_param_year, test_param_month)
+
+
     # 14 exercise tests
 
     def test_exercise_diff_days(self):
