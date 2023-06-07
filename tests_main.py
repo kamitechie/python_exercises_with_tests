@@ -262,6 +262,26 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.to_cap_case(test_param)
 
+    # vowel count exercise tests
+
+    def test_vowel_count(self):
+        test_param = 'awesomness'
+        self.assertEqual(main.get_count(test_param), 4)
+
+    def test_vowel_count_uppercase(self):
+        test_param = 'AwesOmness'
+        self.assertEqual(main.get_count(test_param), 4)
+
+    def test_vowel_count_num(self):
+        test_param = 367
+        with self.assertRaises(TypeError):
+            main.get_count(test_param)
+
+    def test_vowel_count_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.get_count(test_param)
+
 
 if __name__ == '__main__':
     unittest.main()

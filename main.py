@@ -198,8 +198,11 @@ vowels = ["a", "e", "i", "o", "u"]
 
 
 def get_count(sentence):
+    if type(sentence) != str:
+        raise TypeError('Input should be string')
+
     vowel_count = 0
-    for letter in sentence:
+    for letter in sentence.lower():
         if letter in vowels:
             vowel_count += 1
     return vowel_count
