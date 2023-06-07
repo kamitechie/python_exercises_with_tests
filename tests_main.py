@@ -216,5 +216,36 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.exercise_number_diff(test_param)
 
+    # narcissist exercise tests
+
+    def test_number_narcissist_true(self):
+        test_param = 1634
+        self.assertTrue(main.number_narcissist(test_param))
+
+    def test_number_narcissist_false(self):
+        test_param = 123
+        self.assertFalse(main.number_narcissist(test_param))
+
+    def test_number_narcissist_zero(self):
+        test_param = 0
+        with self.assertRaises(ValueError):
+            main.number_narcissist(test_param)
+
+    def test_number_narcissist_negative(self):
+        test_param = -12
+        with self.assertRaises(ValueError):
+            main.number_narcissist(test_param)
+
+    def test_number_narcissist_not_num(self):
+        test_param = 'one'
+        with self.assertRaises(TypeError):
+            main.number_narcissist(test_param)
+
+    def test_number_narcissist_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.number_narcissist(test_param)
+
+
 if __name__ == '__main__':
     unittest.main()

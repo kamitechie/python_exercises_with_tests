@@ -164,15 +164,20 @@ def exercise_number_diff(n):
 # Is number a Narcissist
 
 def number_narcissist(value):
-    separate_list = [int(n) for n in value]
-    base = len(value)
-    sum_of_number = sum(num ** base for num in separate_list)
-
-    if sum_of_number == int(value):
-        return True
+    if type(value) != int:
+        raise TypeError('Input should be number')
+    elif value <= 0:
+        raise ValueError('Number should be positive')
     else:
-        return False
+        value = str(value)
+        separate_list = [int(n) for n in value]
+        base = len(value)
+        sum_of_number = sum(num ** base for num in separate_list)
 
+        if sum_of_number == int(value):
+            return True
+        else:
+            return False
 
 # Capitalize string
 
