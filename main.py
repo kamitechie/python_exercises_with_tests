@@ -207,10 +207,15 @@ def get_count(sentence):
             vowel_count += 1
     return vowel_count
 
+
 # Moving zeros
 
-
 def move_zeros(lst):
+    if type(lst) != list:
+        raise TypeError('Input should be a list')
+
+    if len(lst) == 0:
+        return 'List is empty'
     for num in lst:
         if num == 0:
             lst.remove(num)

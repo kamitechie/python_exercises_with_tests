@@ -282,6 +282,34 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.get_count(test_param)
 
+    # moving zeros exercise tests
+
+    def test_move_zeros(self):
+        test_param = [1, 0, 3, 5, 0, 1]
+        self.assertEqual(main.move_zeros(test_param), [1, 3, 5, 1, 0, 0])
+
+    def test_move_zeros_list_with_str(self):
+        test_param = [0, '2', 3, '5', 0, 1]
+        self.assertEqual(main.move_zeros(test_param), ['2', 3, '5', 1, 0, 0])
+
+    def test_move_zeros_all_zeros(self):
+        test_param = [0, 0, 0]
+        self.assertEqual(main.move_zeros(test_param), [0, 0, 0])
+
+    def test_move_zeros_empty(self):
+        test_param = []
+        self.assertEqual(main.move_zeros(test_param), 'List is empty')
+
+    def test_move_zeros_none(self):
+        test_param = None
+        with self.assertRaises(TypeError):
+            main.move_zeros(test_param)
+
+    def test_move_zeros_not_list(self):
+        test_param = 123
+        with self.assertRaises(TypeError):
+            main.move_zeros(test_param)
+
 
 if __name__ == '__main__':
     unittest.main()
