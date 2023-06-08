@@ -33,13 +33,13 @@ class TestMain(unittest.TestCase):
         result = main.exercise_reverse_name(test_param_name, test_param_lastname)
         self.assertEqual(result, 'oJ annA')
 
-    def test_exercise_reverse_fullname_lowercase(self):
+    def test_exercise_reverse_fullname_uppercase(self):
         test_param_name = 'WILL'
         test_param_lastname = 'SHO'
         result = main.exercise_reverse_name(test_param_name, test_param_lastname)
         self.assertEqual(result, 'OHS LLIW')
 
-    def test_exercise_reverse_fullname_uppercase(self):
+    def test_exercise_reverse_fullname_lowercase(self):
         test_param_name = 'fo'
         test_param_lastname = 'ally'
         result = main.exercise_reverse_name(test_param_name, test_param_lastname)
@@ -159,7 +159,6 @@ class TestMain(unittest.TestCase):
         with self.assertRaises(TypeError):
             main.exercise_triple_sum(test_param)
 
-
     # 12 exercise tests
 
     def test_exercise_calendar(self):
@@ -178,7 +177,6 @@ class TestMain(unittest.TestCase):
         test_param_month = None
         with self.assertRaises(TypeError):
             main.exercise_calendar(test_param_year, test_param_month)
-
 
     # 14 exercise tests
 
